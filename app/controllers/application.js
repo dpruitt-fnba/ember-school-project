@@ -1,4 +1,5 @@
 import Controller from '@ember/controller';
+import { set } from '@ember/object';
 
 export default Controller.extend({
   chefs: [
@@ -22,5 +23,13 @@ export default Controller.extend({
       name: 'Guy Fieri',
       isCookingToday: true
     }
-  ]
+  ],
+  actions: {
+    enter(chef) {
+      set(chef, 'isCookingToday', true);
+    },
+    exit(chef) {
+      set(chef, 'isCookingToday', false);
+    }
+  }
 });
