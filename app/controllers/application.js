@@ -1,5 +1,5 @@
 import Controller from '@ember/controller';
 
 export default Controller.extend({
-  chef: 'chef'
+  chefs: ['Gordon Ramsay', 'Anthony Bourdain', 'Rachael Ray', 'Jamie Oliver', 'Guy Fieri']
 });
