@@ -1,6 +1,7 @@
 <h1>Chef Tracker</h1>
+<span>{{activeChefs.length}} of our {{chefs.length}} chefs are cooking right now!</span>
 <ul>
-{{#each model as |chef|}}
+{{#each chefs as |chef|}}
   {{#if chef.isCookingToday}}
     <li class="available">
       {{chef.name}}
