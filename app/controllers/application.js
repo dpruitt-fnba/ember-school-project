@@ -1,12 +1,18 @@
 import Controller from '@ember/controller';
-import { set } from '@ember/object';
-import { filterBy } from '@ember/object/computed';
-import { alias } from '@ember/object/computed';
+import { set, computed } from '@ember/object';
+import { filterBy, alias } from '@ember/object/computed';
 
 export default Controller.extend({
   newChef: null,
   chefs: alias('model'),
   activeChefs: filterBy('model', 'isCookingToday', true),
+  totalStudentCount: computed('model.@each.studentCount', function() {
+    let total = 0;
+    this.get('model').forEach(chef => {
+      total += parseInt(chef.get('studentCount'));
+    });
+    return total;
+  }),
   actions: {
     enter(chef) {
       set(chef, 'isCookingToday', true);
