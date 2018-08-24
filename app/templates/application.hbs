@@ -3,15 +3,21 @@
 <ul>
 {{#each chefs as |chef|}}
   {{#if chef.isCookingToday}}
-    <li class="available">
-      {{chef.name}}
+    <li>
+      <span class="available">{{chef.name}}</span>
       <button {{action "exit" chef}}>Exit</button>
+      <div>
+        Number of Students <button>-</button> {{chef.studentCount}} <button>+</button>
+      </div>
     </li>
   {{else}}
-    <li class="unavailable">
-      {{chef.name}}
+    <li>
+      <span class="unavailable">{{chef.name}}</span>
       <button {{action "enter" chef}}>Enter</button>
       <button {{action "fireChef" chef}}>Fire</button>
+      <div>
+        Number of Students <button>-</button> {{chef.studentCount}} <button>+</button>
+      </div>
     </li>
   {{/if}}
 {{/each}}
