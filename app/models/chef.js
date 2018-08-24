@@ -2,5 +2,6 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   name: DS.attr('string'),
-  isCookingToday: DS.attr('boolean')
+  isCookingToday: DS.attr('boolean'),
+  description: DS.attr('string')
 });
