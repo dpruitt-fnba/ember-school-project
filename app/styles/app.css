@@ -5,3 +5,12 @@
 .unavailable {
   color: grey;
 }
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-item {
+  padding: 1rem;
+}
