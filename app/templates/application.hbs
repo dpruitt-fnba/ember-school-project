@@ -7,7 +7,10 @@
       <span class="available">{{chef.name}}</span>
       <button {{action "exit" chef}}>Exit</button>
       <div>
-        Number of Students <button>-</button> {{chef.studentCount}} <button>+</button>
+        Number of Students
+        <button {{action "removeStudent" chef}}>-</button>
+        {{chef.studentCount}}
+        <button {{action "addStudent" chef}}>+</button>
       </div>
     </li>
   {{else}}
@@ -16,7 +19,10 @@
       <button {{action "enter" chef}}>Enter</button>
       <button {{action "fireChef" chef}}>Fire</button>
       <div>
-        Number of Students <button>-</button> {{chef.studentCount}} <button>+</button>
+        Number of Students
+        <button {{action "removeStudent" chef}}>-</button>
+        {{chef.studentCount}}
+        <button {{action "addStudent" chef}}>+</button>
       </div>
     </li>
   {{/if}}

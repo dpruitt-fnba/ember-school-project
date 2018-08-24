@@ -25,6 +25,16 @@ export default Controller.extend({
     },
     fireChef(chef) {
       chef.destroyRecord();
+    },
+    addStudent(chef) {
+      chef.incrementProperty('studentCount');
+      chef.save();
+    },
+    removeStudent(chef) {
+      if(chef.get('studentCount') > 0) {
+        chef.decrementProperty('studentCount');
+        chef.save();
+      }
     }
   }
 });
