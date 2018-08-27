@@ -21,9 +21,6 @@ export default Controller.extend({newChef: null,
         isCookingToday: false
       }).save();
       this.set('newChef', null);
-    },
-    fireChef(chef) {
-      chef.destroyRecord();
     }
   }
 
