@@ -1,8 +1,4 @@
-.available {
-  text-decoration: underline;
-}
-
-.unavailable {
+.unavailable a {
   color: grey;
 }
 

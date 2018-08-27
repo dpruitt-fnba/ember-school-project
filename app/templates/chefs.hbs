@@ -5,13 +5,13 @@
     <ul>
       {{#each chefs as |chef|}}
         {{#if chef.isCookingToday}}
-          <li class="available">
+          <li>
             {{#link-to 'chefs.chef' chef.id}}{{chef.name}}{{/link-to}}
             <button {{action "exit" chef}}>Exit</button>
           </li>
         {{else}}
           <li class="unavailable">
-            {{chef.name}}
+            {{#link-to 'chefs.chef' chef.id}}{{chef.name}}{{/link-to}}
             <button {{action "enter" chef}}>Enter</button>
             <button {{action "fireChef" chef}}>Fire</button>
           </li>
