@@ -37,3 +37,9 @@
   width: 100px;
   height: 100px;
 }
+
+.contact-us {
+  border: 1px solid black;
+  border-radius: .25rem;
+  padding: .5rem;
+}
