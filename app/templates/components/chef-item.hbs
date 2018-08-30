@@ -1,0 +1,21 @@
+<div class="chef-item">
+  <div {{action 'toggleVisibility'}} class="chef-item__title {{if chef.isCookingToday '' 'unavailable'}}">
+    <span>{{chef.name}}</span>
+    <span>{{if isOpen 'V' '>'}}</span>
+  </div>
+  {{#if isOpen}}
+    <div>
+      <img class="chef-item__image" src="{{chef.imageUrl}}">
+      {{chef.description}}
+    </div>
+    <div>
+      {{#link-to 'chefs.chef' chef.id tagName='button'}}Show{{/link-to}}
+      {{#link-to 'chefs.chef.edit' chef.id tagName='button'}}Edit{{/link-to}}
+      {{#if chef.isCookingToday}}
+        <button {{action "exit" chef}}>Exit</button>
+      {{else}}
+        <button {{action "enter" chef}}>Enter</button>
+      {{/if}}
+    </div>
+  {{/if}}
+</div>

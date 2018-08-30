@@ -1,4 +1,4 @@
-.unavailable a {
+.unavailable {
   color: grey;
 }
 
@@ -18,4 +18,22 @@
 .form-group label {
   margin-bottom: 0.25rem;
   display: block;
+}
+
+.chef-item {
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+.chef-item__title {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.chef-item__image {
+  width: 100px;
+  height: 100px;
 }

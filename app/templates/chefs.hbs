@@ -2,21 +2,9 @@
   <div class="flex-item">
     <h1>Chef Tracker</h1>
     <span>{{activeChefs.length}} of our {{chefs.length}} chefs are cooking right now!</span>
-    <ul>
-      {{#each chefs as |chef|}}
-        {{#if chef.isCookingToday}}
-          <li>
-            {{#link-to 'chefs.chef' chef.id}}{{chef.name}}{{/link-to}}
-            <button {{action "exit" chef}}>Exit</button>
-          </li>
-        {{else}}
-          <li class="unavailable">
-            {{#link-to 'chefs.chef' chef.id}}{{chef.name}}{{/link-to}}
-            <button {{action "enter" chef}}>Enter</button>
-          </li>
-        {{/if}}
-      {{/each}}
-    </ul>
+    {{#each chefs as |chef|}}
+      {{chef-item chef=chef}}
+    {{/each}}
     <hr>
     {{input value=newChef}}
     <button {{action "addNewChef"}}>Add Chef</button>
