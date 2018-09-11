@@ -1,2 +1,13 @@
 <h1>{{model.name}}</h1>
+{{#if model.chefs}}
+  <p>Currently employed chefs:</p>
+  <ul>
+    {{#each model.chefs as |chef|}}
+      <li>{{link-to chef.name 'chefs.chef' chef.id}}</li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>No chefs currently employed.</p>
+{{/if}}
+<hr>
 {{link-to 'Edit' 'restaurants.restaurant.edit' model.id tagName='button'}}
