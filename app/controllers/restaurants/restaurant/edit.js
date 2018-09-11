@@ -9,6 +9,20 @@ export default Controller.extend({
     save() {
       this.get('restaurant').save();
       this.transitionToRoute('restaurants.restaurant', this.get('restaurant.id'));
+    },
+    removeChef(chef) {
+      let restaurant = this.get('restaurant');
+      restaurant.get('chefs').removeObject(chef);
+      chef.save().then(() => {
+        restaurant.save();
+      });
+    },
+    addChef(chef) {
+      let restaurant = this.get('restaurant');
+      restaurant.get('chefs').addObject(chef);
+      chef.save().then(() => {
+        restaurant.save();
+      });
     }
   }
 });
