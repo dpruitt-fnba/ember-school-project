@@ -4,7 +4,7 @@
     <span>{{activeChefs.length}} of our {{chefs.length}} chefs are cooking right now!</span>
     {{#each chefs as |chef|}}
       {{#collapsible-component as |isOpen component|}}
-        <div class="chef-item">
+        <div class="card">
           <div {{action 'toggleVisibility' target=component}} class="chef-item__title {{if chef.isCookingToday '' 'unavailable'}}">
             <span>{{chef.name}}</span>
             <span>{{if isOpen 'V' '>'}}</span>

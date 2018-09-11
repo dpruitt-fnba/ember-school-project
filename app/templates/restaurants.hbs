@@ -1,1 +1,12 @@
-{{outlet}}
+<div class="flex-container">
+  <div class="flex-item">
+    {{#each restaurants as |restaurant|}}
+        <div class="card">
+          {{restaurant.name}}
+        </div>
+    {{/each}}
+  </div>
+  <div class="flex-item">
+    {{outlet}}
+  </div>
+</div>
