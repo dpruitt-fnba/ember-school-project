@@ -15,12 +15,14 @@
 
 <div class="form-group">
   <label>Restaurants</label>
-  {{#x-select value=chef.restaurant}}
+  {{#x-select value=chef.restaurant.content action="selectRestaurant" as |xs|}}
     {{#each restaurants as |restaurant|}}
-      {{#x-option value=restaurant}}{{restaurant.name}}{{/x-option}}
+      {{#xs.option value=restaurant}}
+        {{restaurant.name}}
+      {{/xs.option}}
     {{/each}}
   {{/x-select}}
 </div>
 
-<button {{action 'save'}}>Save</button>
+<button {{action "save"}}>Save</button>
 <button {{action "fireChef" chef}}>Fire</button>
