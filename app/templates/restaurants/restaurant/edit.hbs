@@ -3,5 +3,16 @@
   <label>Name</label>
   {{input value=restaurant.name}}
 </div>
-
+<h3>Working Chefs</h3>
+<ul>
+  {{#each restaurant.chefs as |chef|}}
+    <li>{{chef.name}} <button {{action "removeChef" chef}}>Remove</button></li>
+  {{/each}}
+</ul>
+<h3>Other Chefs</h3>
+<ul>
+  {{#each otherChefs as |chef|}}
+    <li>{{chef.name}} <button {{action "addChef" chef}}>Add</button></li>
+  {{/each}}
+</ul>
 <button {{action 'save'}}>Save</button>
