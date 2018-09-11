@@ -1,2 +1,10 @@
 <p>Want to know if your favorite chef is cooking right now? Chef Tracker has your back.</p>
+{{#collapsible-component as |isOpen component|}}
+  {{#if isOpen}}
+    <p>Chef tracker is sponsored by a shadowy cabal of food manufacturers.</p>
+    <p>But we assure you, there is no cause for alarm.</p>
+  {{/if}}
+  <p {{action 'toggleVisibility' target=component}}>{{if isOpen 'See less...' 'See more...'}}</p>
+{{/collapsible-component}}
+<hr>
 {{contact-us about="our app" email="app@chef-tracker.ember"}}
