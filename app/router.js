@@ -13,6 +13,7 @@ Router.map(function() {
   });
   this.route('about');
   this.route('training');
+  this.route('restaurants');
 });
 
 export default Router;
