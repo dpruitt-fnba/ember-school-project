@@ -13,6 +13,14 @@ export default Controller.extend({newChef: null,
         isCookingToday: false
       }).save();
       this.set('newChef', null);
+    },
+    enter(chef) {
+      chef.set('isCookingToday', true);
+      chef.save();
+    },
+    exit(chef) {
+      chef.set('isCookingToday', false);
+      chef.save();
     }
   }
 
