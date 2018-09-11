@@ -2,7 +2,8 @@ import Controller from '@ember/controller';
 import { alias } from '@ember/object/computed';
 
 export default Controller.extend({
-  chef: alias('model'),
+  chef: alias('model.chef'),
+  restaurants: alias('model.restaurants'),
   actions: {
     save() {
       this.get('chef').save();

@@ -13,5 +13,14 @@
   {{input value=chef.imageUrl}}
 </div>
 
+<div class="form-group">
+  <label>Restaurants</label>
+  {{#x-select value=chef.restaurant}}
+    {{#each restaurants as |restaurant|}}
+      {{#x-option value=restaurant}}{{restaurant.name}}{{/x-option}}
+    {{/each}}
+  {{/x-select}}
+</div>
+
 <button {{action 'save'}}>Save</button>
 <button {{action "fireChef" chef}}>Fire</button>
