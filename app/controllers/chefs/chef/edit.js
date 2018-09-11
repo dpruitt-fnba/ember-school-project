@@ -12,6 +12,14 @@ export default Controller.extend({
     fireChef(chef) {
       chef.destroyRecord();
       this.transitionToRoute('chefs');
+    },
+    selectRestaurant(selection) {
+      let chef = this.get('chef')
+      chef.get('restaurant').then((restaurant) => {
+        chef.set('restaurant', selection);
+        selection.save();
+        restaurant.save();
+      });
     }
   }
 });
